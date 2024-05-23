@@ -1,0 +1,33 @@
+  // Generate the ceiling of the log base 2 - i.e. the number of bits
+  // required to hold N different values - i.e. clogb2(N) will be large
+  // enough to hold the counts 0 to N-1
+  function integer clogb2;
+    input [31:0] value;
+    reg   [31:0] my_val;
+    begin
+      my_val = value - 1;
+      for (clogb2 = 0; my_val > 0; clogb2 = clogb2 + 1)
+        my_val = my_val >> 1;
+    end
+  endfunction
+
+ //<copyright-disclaimer-start>
+//<copyright-disclaimer-start>
+//  **************************************************************************************************************
+//  * © 2023 Advanced Micro Devices, Inc. All rights reserved.                                                   *
+//  * DISCLAIMER                                                                                                 *
+//  * The information contained herein is for informational purposes only, and is subject to change              *
+//  * without notice. While every precaution has been taken in the preparation of this document, it              *
+//  * may contain technical inaccuracies, omissions and typographical errors, and AMD is under no                *
+//  * obligation to update or otherwise correct this information.  Advanced Micro Devices, Inc. makes            *
+//  * no representations or warranties with respect to the accuracy or completeness of the contents of           *
+//  * this document, and assumes no liability of any kind, including the implied warranties of noninfringement,  *
+//  * merchantability or fitness for particular purposes, with respect to the operation or use of AMD            *
+//  * hardware, software or other products described herein.  No license, including implied or                   *
+//  * arising by estoppel, to any intellectual property rights is granted by this document.  Terms and           *
+//  * limitations applicable to the purchase or use of AMD’s products are as set forth in a signed agreement     *
+//  * between the parties or in AMD's Standard Terms and Conditions of Sale. GD-18                               *
+//  *                                                                                                            *
+//  **************************************************************************************************************
+//<copyright-disclaimer-end>
+// <copyright-disclaimer-end>
